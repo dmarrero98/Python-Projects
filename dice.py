@@ -1,4 +1,3 @@
-# Write your solution here
 def roll(die):
     from random import choice
     if die == "A":
