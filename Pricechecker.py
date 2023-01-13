@@ -4,12 +4,11 @@ def web_scraper():
     from bs4 import BeautifulSoup as bs
     
     #load web page content
-    walmart = requests.get("https://www.newegg.com/asus-geforce-rtx-4090-rog-strix-rtx4090-o24g-gaming/p/N82E16814126593?quicklink=true")
+    newegg = requests.get("https://www.newegg.com/asus-geforce-rtx-4090-rog-strix-rtx4090-o24g-gaming/p/N82E16814126593?quicklink=true")
 
     #convert to bs object
-    doc = bs(walmart.text, "html.parser")
+    doc = bs(newegg.text, "html.parser")
     price = doc.find_all(text="$")
-    stock = doc.find_all(text="stock")
     parent = price[0].parent
     strong = parent.find("strong")
     return(f"The current price for the ASUS RTX 4090 graphics card on NewEgg is {strong.string}$")
