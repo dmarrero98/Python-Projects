@@ -1,4 +1,4 @@
-# Write your solution here
+#Practicing class inheritance
 import random
 
 class WordGame():
